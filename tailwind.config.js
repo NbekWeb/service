@@ -19,7 +19,16 @@ module.exports = {
                dark: '#808080',
             },
          },
+
+         fontFamily: {
+            inter: ["inter-400"],
+            "inter-500": ["inter-500"],
+            "inter-600": ["inter-600"],
+            "inter-700": ["inter-700"],
+            "inter-800": ["inter-800"],
+         },
       },
+
    },
    variants: {
       extend: {},
