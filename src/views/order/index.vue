@@ -351,7 +351,6 @@ const onDateSelect7 = (newDate) => {
 							<p style="margin-bottom: 6px">
 								Дата причиной инвалидности
 							</p>
-
 							<v-menu
 								v-model="menu3"
 								:close-on-content-click="true"
