@@ -1,20 +1,26 @@
 <script setup>
+import { ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+import SingInModal from "./components/SingInModal.vue";
+const signRef = ref()
 </script>
 
 <template>
-	<div class="bg-primary">
-		<header>
-			<div class="wrapper">
-				<nav>
-					<RouterLink to="/">Home</RouterLink>
-					<RouterLink to="/about">About</RouterLink>
-				</nav>
+	<div class="">
+      <SingInModal ref="signRef" />
+		<div class="container">
+			<div class="fl">
+				<v-btn @click="signRef.open()">Выход</v-btn>
 			</div>
-		</header>
+		</div>
 
 		<RouterView />
 	</div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.fl {
+	display: flex;
+	justify-content: end;
+}
+</style>
