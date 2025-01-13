@@ -15,7 +15,10 @@ defineExpose({
 	<div>
 		<v-dialog class="modal" v-model="dialog" max-width="607" persistent>
 			<v-card class="p-54 fd">
-				<v-checkbox label="Просмотр фамилии, имени и отчества"></v-checkbox>
+				<v-checkbox
+					color="primary"
+					label="Просмотр фамилии, имени и отчества"
+				></v-checkbox>
 
 				<v-checkbox
 					color="primary"
@@ -97,6 +100,9 @@ defineExpose({
 		font-weight: 500;
 		font-family: Inter;
 		line-height: 20px;
+		@media (max-width: 700px) {
+			font-size: 14px;
+		}
 	}
 	.btnn1 {
 		height: 52px !important;
@@ -123,9 +129,15 @@ defineExpose({
 		font-weight: 500;
 		font-family: Inter;
 		color: #6b7280;
+		@media (max-width: 700px) {
+			font-size: 16px;
+		}
 	}
 	.p-54 {
 		padding: 54px;
+		@media (max-width: 700px) {
+			padding: 24px;
+		}
 	}
 }
 </style>

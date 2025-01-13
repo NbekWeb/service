@@ -68,8 +68,14 @@ function handleModal() {
 	font-weight: 500;
 	font-family: Inter;
 	color: #6b7280;
+   @media (max-width: 700px) {
+		font-size: 16px;
+	}
 }
 .p-54 {
 	padding: 54px;
+   @media (max-width: 700px) {
+		padding: 24px;
+	}
 }
 </style>

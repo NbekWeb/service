@@ -201,7 +201,7 @@ const onDateSelect7 = (newDate) => {
 					заявления
 				</p>
 			</div>
-         <h1 v-else>Заявление о страховой выплате</h1>
+			<h1 v-else>Заявление о страховой выплате</h1>
 			<v-radio-group class="fl" v-model="val">
 				<v-radio
 					color="primary"
@@ -224,7 +224,7 @@ const onDateSelect7 = (newDate) => {
 								<v-text-field
 									placeholder="Иванов Иван Иванович"
 									class="input"
-									variant="solo-filled"
+									variant="solo"
 								></v-text-field>
 							</div>
 							<div>
@@ -242,7 +242,7 @@ const onDateSelect7 = (newDate) => {
 										<v-text-field
 											v-bind="props"
 											v-model="formattedDate"
-											variant="solo-filled"
+											variant="solo"
 											readonly
 											placeholder="ДД.ММ.ГГГГ"
 										></v-text-field>
@@ -263,7 +263,7 @@ const onDateSelect7 = (newDate) => {
 
 								<v-text-field
 									v-model="item.phoneNumber"
-									variant="solo-filled"
+									variant="solo"
 									placeholder="+7 (___) ___-__-__"
 									v-mask="'+7 (###) ###-##-##'"
 									maxlength="18"
@@ -279,26 +279,26 @@ const onDateSelect7 = (newDate) => {
 								v-model="item.name"
 								placeholder="Наименование"
 								class="input"
-								variant="solo-filled"
+								variant="solo"
 							></v-text-field>
 							<v-text-field
 								v-model="item.seria"
 								placeholder="Серия"
 								class="input"
-								variant="solo-filled"
+								variant="solo"
 							></v-text-field>
 							<v-text-field
 								v-model="item.number"
 								placeholder="Номер"
 								class="input"
-								variant="solo-filled"
+								variant="solo"
 							></v-text-field>
 						</div>
 						<v-text-field
 							class="mt20"
 							v-model="item.info"
 							placeholder="Кем и когда выдан"
-							variant="solo-filled"
+							variant="solo"
 						></v-text-field>
 					</div>
 					<div class="main">
@@ -318,7 +318,7 @@ const onDateSelect7 = (newDate) => {
 									</p>
 									<v-text-field
 										v-model="item.disability1"
-										variant="solo-filled"
+										variant="solo"
 									></v-text-field>
 								</div>
 								<div>
@@ -337,7 +337,7 @@ const onDateSelect7 = (newDate) => {
 									>
 										<template #activator="{ props }">
 											<v-text-field
-												variant="solo-filled"
+												variant="solo"
 												v-bind="props"
 												v-model="formattedDate1"
 												readonly
@@ -372,7 +372,7 @@ const onDateSelect7 = (newDate) => {
 									>
 										<template #activator="{ props }">
 											<v-text-field
-												variant="solo-filled"
+												variant="solo"
 												v-bind="props"
 												v-model="formattedDate2"
 												readonly
@@ -403,7 +403,7 @@ const onDateSelect7 = (newDate) => {
 									</p>
 									<v-text-field
 										v-model="item.trauma1"
-										variant="solo-filled"
+										variant="solo"
 									></v-text-field>
 								</div>
 								<div>
@@ -422,7 +422,7 @@ const onDateSelect7 = (newDate) => {
 									>
 										<template #activator="{ props }">
 											<v-text-field
-												variant="solo-filled"
+												variant="solo"
 												v-bind="props"
 												v-model="formattedDate3"
 												readonly
@@ -454,7 +454,7 @@ const onDateSelect7 = (newDate) => {
 									<v-text-field
 										v-model="item.hospital1"
 										placeholder="Госпитализировали с "
-										variant="solo-filled"
+										variant="solo"
 									></v-text-field>
 								</div>
 								<div>
@@ -462,7 +462,7 @@ const onDateSelect7 = (newDate) => {
 									<v-text-field
 										v-model="item.hospital1"
 										placeholder="Госпитализировали по"
-										variant="solo-filled"
+										variant="solo"
 									></v-text-field>
 								</div>
 							</div>
@@ -479,7 +479,7 @@ const onDateSelect7 = (newDate) => {
 									<v-text-field
 										v-model="item.operatsion1"
 										placeholder="Укажите операцию"
-										variant="solo-filled"
+										variant="solo"
 									></v-text-field>
 								</div>
 								<div>
@@ -498,7 +498,7 @@ const onDateSelect7 = (newDate) => {
 									>
 										<template #activator="{ props }">
 											<v-text-field
-												variant="solo-filled"
+												variant="solo"
 												v-bind="props"
 												v-model="formattedDate4"
 												readonly
@@ -532,7 +532,7 @@ const onDateSelect7 = (newDate) => {
 									>
 										<template #activator="{ props }">
 											<v-text-field
-												variant="solo-filled"
+												variant="solo"
 												v-bind="props"
 												v-model="formattedDate5"
 												readonly
@@ -561,7 +561,7 @@ const onDateSelect7 = (newDate) => {
 									<p style="margin-bottom: 6px">Укажите заболевание</p>
 									<v-text-field
 										v-model="item.trauma1"
-										variant="solo-filled"
+										variant="solo"
 									></v-text-field>
 								</div>
 								<div>
@@ -580,7 +580,7 @@ const onDateSelect7 = (newDate) => {
 									>
 										<template #activator="{ props }">
 											<v-text-field
-												variant="solo-filled"
+												variant="solo"
 												v-bind="props"
 												v-model="formattedDate6"
 												readonly
@@ -602,7 +602,7 @@ const onDateSelect7 = (newDate) => {
 									<p style="margin-bottom: 6px">Номер договора</p>
 									<v-text-field
 										v-model="item.diagnosis3"
-										variant="solo-filled"
+										variant="solo"
 									></v-text-field>
 								</div>
 								<div>
@@ -621,7 +621,7 @@ const onDateSelect7 = (newDate) => {
 									>
 										<template #activator="{ props }">
 											<v-text-field
-												variant="solo-filled"
+												variant="solo"
 												v-bind="props"
 												v-model="formattedDate7"
 												readonly
@@ -644,7 +644,7 @@ const onDateSelect7 = (newDate) => {
 								<v-textarea
 									placeholder="Пожалуйста, подробно укажите обстоятельства, причины, место события и прочее"
 									v-model="item.diagnosis5"
-									variant="solo-filled"
+									variant="solo"
 								></v-textarea>
 							</div>
 						</div>
@@ -655,31 +655,31 @@ const onDateSelect7 = (newDate) => {
 							</h2>
 							<div class="grid-3 mt40">
 								<div>
-									<p>Получатель (ФИО)</p>
-									<v-text-field variant="solo-filled"></v-text-field>
+									<p class="mb8">Получатель (ФИО)</p>
+									<v-text-field variant="solo"></v-text-field>
 								</div>
 								<div>
-									<p>Наименование банка</p>
+									<p class="mb8">Наименование банка</p>
 									<v-text-field
 										placeholder="Наименование банка"
-										variant="solo-filled"
+										variant="solo"
 									></v-text-field>
 								</div>
 								<div>
-									<p>БИК</p>
-									<v-text-field variant="solo-filled"></v-text-field>
+									<p class="mb8">БИК</p>
+									<v-text-field variant="solo"></v-text-field>
 								</div>
 								<div>
-									<p>ИНН</p>
-									<v-text-field variant="solo-filled"></v-text-field>
+									<p class="mb8">ИНН</p>
+									<v-text-field variant="solo"></v-text-field>
 								</div>
 								<div>
-									<p>Расчетный счет</p>
-									<v-text-field variant="solo-filled"></v-text-field>
+									<p class="mb8">Расчетный счет</p>
+									<v-text-field variant="solo"></v-text-field>
 								</div>
 								<div>
-									<p>Корреспондентский счет банка</p>
-									<v-text-field variant="solo-filled"></v-text-field>
+									<p class="mb8">Корреспондентский счет банка</p>
+									<v-text-field variant="solo"></v-text-field>
 								</div>
 							</div>
 						</div>
@@ -760,14 +760,31 @@ const onDateSelect7 = (newDate) => {
 	.sizB {
 		margin-top: 40px;
 		height: 70px !important;
-		font-size: 20px;
+		font-size: 24px;
+		@media (max-width: 700px) {
+			margin-top: 20px;
+
+			font-size: 19px;
+			width: 100%;
+			font-weight: 400;
+			.v-btn__content {
+				white-space: normal;
+			}
+		}
 	}
 	.fl2 {
 		display: flex;
 		column-gap: 20px;
+		flex-wrap: wrap;
+		@media (max-width: 900px) {
+			column-gap: 0px;
+		}
 	}
 	.main {
 		margin-top: 80px;
+		@media (max-width: 700px) {
+			margin-top: 40px;
+		}
 	}
 	.mt20 {
 		margin-top: 20px;
@@ -777,6 +794,9 @@ const onDateSelect7 = (newDate) => {
 	}
 	.mt80 {
 		margin-top: 80px;
+		@media (max-width: 700px) {
+			margin-top: 40px;
+		}
 	}
 	.v-input__details {
 		display: none;
@@ -796,7 +816,7 @@ const onDateSelect7 = (newDate) => {
 		width: 100%;
 	}
 	.w-874 {
-		margin-top: 40px;
+		margin-top: 25px;
 		max-width: 980px;
 		width: 100%;
 	}
@@ -806,7 +826,12 @@ const onDateSelect7 = (newDate) => {
 		align-items: end;
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		margin-bottom: 20px;
+		margin-bottom: 30px;
+		@media (max-width: 700px) {
+			column-gap: 0px;
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			row-gap: 14px;
+		}
 	}
 	.mb40 {
 		margin-bottom: 40px;
@@ -817,6 +842,10 @@ const onDateSelect7 = (newDate) => {
 		align-items: end;
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
+		@media (max-width: 700px) {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			row-gap: 14px;
+		}
 	}
 	.grid-7 {
 		column-gap: 30px;
@@ -824,6 +853,17 @@ const onDateSelect7 = (newDate) => {
 		align-items: end;
 		display: grid;
 		grid-template-columns: repeat(7, minmax(0, 1fr));
+		@media (max-width: 700px) {
+			margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+			row-gap: 20px;
+
+			align-items: start;
+			div {
+				width: 100%;
+			}
+		}
 	}
 	.w-1100 {
 		max-width: 1100px;
@@ -844,17 +884,29 @@ const onDateSelect7 = (newDate) => {
 		column-gap: 74px;
 		margin-top: 20px;
 		margin-bottom: 60px;
+		@media (max-width: 700px) {
+			margin-bottom: 30px;
+		}
 		.v-selection-control-group {
 			flex-direction: row;
 			column-gap: 74px;
+			@media (max-width: 700px) {
+				flex-direction: column;
+			}
 		}
 		.v-label {
 			font-size: 20px;
 			font-weight: 400;
 			font-style: italic;
+			@media (max-width: 700px) {
+				font-size: 14px;
+			}
 		}
 		.v-selection-control {
 			flex: none;
+		}
+		@media (max-width: 700px) {
+			flex-direction: column !important;
 		}
 	}
 	.p-italic {

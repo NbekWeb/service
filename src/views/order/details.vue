@@ -48,7 +48,7 @@ const onDateSelect = (newDate) => {
 					<v-text-field
 						placeholder="Иванов Иван Иванович"
 						class="input"
-						variant="solo-filled"
+						variant="solo"
 					></v-text-field>
 				</div>
 				<div>
@@ -66,7 +66,7 @@ const onDateSelect = (newDate) => {
 							<v-text-field
 								v-bind="props"
 								v-model="formattedDate"
-								variant="solo-filled"
+								variant="solo"
 								readonly
 								placeholder="ДД.ММ.ГГГГ"
 							></v-text-field>
@@ -87,7 +87,7 @@ const onDateSelect = (newDate) => {
 
 					<v-text-field
 						v-model="item.phoneNumber"
-						variant="solo-filled"
+						variant="solo"
 						placeholder="+7 (___) ___-__-__"
 						v-mask="'+7 (###) ###-##-##'"
 						maxlength="18"
@@ -102,7 +102,7 @@ const onDateSelect = (newDate) => {
 						v-model="item.plase"
 						placeholder="Страна, город, улица, дом"
 						class="input"
-						variant="solo-filled"
+						variant="solo"
 					></v-text-field>
 				</div>
 				<div>
@@ -111,7 +111,7 @@ const onDateSelect = (newDate) => {
 						v-model="item.degree"
 						placeholder="Степень родства"
 						class="input"
-						variant="solo-filled"
+						variant="solo"
 					></v-text-field>
 				</div>
 			</div>
@@ -122,26 +122,26 @@ const onDateSelect = (newDate) => {
 					v-model="item.name"
 					placeholder="Наименование"
 					class="input"
-					variant="solo-filled"
+					variant="solo"
 				></v-text-field>
 				<v-text-field
 					v-model="item.seria"
 					placeholder="Серия"
 					class="input"
-					variant="solo-filled"
+					variant="solo"
 				></v-text-field>
 				<v-text-field
 					v-model="item.number"
 					placeholder="Номер"
 					class="input"
-					variant="solo-filled"
+					variant="solo"
 				></v-text-field>
 			</div>
 			<v-text-field
 				class="mt20"
 				v-model="item.info"
 				placeholder="Кем и когда выдан"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 		</div>
 		<p class="p-500 mt40">Для иностранных граждан и лиц без гражданства</p>
@@ -155,19 +155,19 @@ const onDateSelect = (newDate) => {
 				v-model="item.seria1"
 				placeholder="Серия"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 			<v-text-field
 				v-model="item.number1"
 				placeholder="Номер"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 			<v-text-field
 				v-model="item.info1"
 				placeholder="Дата начала и окончания срока действия права прибывания"
 				class="input col-span-22"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 		</div>
 		<p class="p-500 mt40">Адрес места жительства</p>
@@ -176,32 +176,32 @@ const onDateSelect = (newDate) => {
 			<v-text-field
 				placeholder="Индекс"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 			<v-text-field
 				placeholder="Область/регион"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 			<v-text-field
 				placeholder="Город"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 			<v-text-field
 				placeholder="Улица"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 			<v-text-field
 				placeholder="Квартира"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 			<v-text-field
 				placeholder="Дом/корпус"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 		</div>
 		<p class="p-500 mt40">Связь</p>
@@ -209,12 +209,12 @@ const onDateSelect = (newDate) => {
 			<v-text-field
 				placeholder="Мобильный"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 			<v-text-field
 				placeholder="e-mail"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 		</div>
 		<h2>Прошу произвести страховую выплату по договору страхования</h2>
@@ -223,36 +223,36 @@ const onDateSelect = (newDate) => {
 			<v-text-field
 				placeholder="Номер договора страхования"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 			<v-text-field
 				placeholder="Дата договора страхования"
 				class="input"
-				variant="solo-filled"
+				variant="solo"
 			></v-text-field>
 		</div>
 		<div class="grid-4_d">
 			<div>
 				<p class="p-500">ФИО</p>
 				<p class="p-italic11">застрахованного лица</p>
-				<v-text-field class="input" variant="solo-filled"></v-text-field>
+				<v-text-field class="input" variant="solo"></v-text-field>
 			</div>
 			<div>
 				<p class="p-500">Дата смерти</p>
 				<p class="p-italic11">застрахованного лица</p>
-				<v-text-field class="input" variant="solo-filled"></v-text-field>
+				<v-text-field class="input" variant="solo"></v-text-field>
 			</div>
 			<div class="col-span-22">
 				<p class="p-500">Дата несчастного случая</p>
 				<p class="p-italic11">
 					если смерть произошла в результате несчастного случая
 				</p>
-				<v-text-field class="input" variant="solo-filled"></v-text-field>
+				<v-text-field class="input" variant="solo"></v-text-field>
 			</div>
 			<div class="col-span-22">
 				<p class="p-500">Причина смерти</p>
 				<p class="p-italic11">застрахованного лица</p>
-				<v-text-field class="input" variant="solo-filled"></v-text-field>
+				<v-text-field class="input" variant="solo"></v-text-field>
 			</div>
 			<div class="col-span-4">
 				<p class="p-500">Обстоятельства смерти</p>
@@ -261,7 +261,7 @@ const onDateSelect = (newDate) => {
 					rows="6"
 					placeholder="укажите, пожалуйста, подробно обстоятельства, причины и место смерти застрахованного лица"
 					class="input"
-					variant="solo-filled"
+					variant="solo"
 				></v-textarea>
 			</div>
 		</div>
@@ -278,28 +278,28 @@ const onDateSelect = (newDate) => {
 					<v-text-field
 						placeholder="Иванов Иван Иванович"
 						class="input"
-						variant="solo-filled"
+						variant="solo"
 					></v-text-field>
 				</div>
 				<div class="col-span-33 mt40">
 					<p class="p-500">Наименование банка</p>
-					<v-text-field class="input" variant="solo-filled"></v-text-field>
+					<v-text-field class="input" variant="solo"></v-text-field>
 				</div>
 				<div class="col-span-22 mt40">
 					<p class="p-500">БИК</p>
-					<v-text-field class="input" variant="solo-filled"></v-text-field>
+					<v-text-field class="input" variant="solo"></v-text-field>
 				</div>
 				<div class="col-span-22">
 					<p class="p-500">ИНН</p>
-					<v-text-field class="input" variant="solo-filled"></v-text-field>
+					<v-text-field class="input" variant="solo"></v-text-field>
 				</div>
 				<div class="col-span-22">
 					<p class="p-500">Расчетный счет</p>
-					<v-text-field class="input" variant="solo-filled"></v-text-field>
+					<v-text-field class="input" variant="solo"></v-text-field>
 				</div>
 				<div class="col-span-22">
 					<p class="p-500">Корреспондентский счет банка</p>
-					<v-text-field class="input" variant="solo-filled"></v-text-field>
+					<v-text-field class="input" variant="solo"></v-text-field>
 				</div>
 			</div>
 		</div>
@@ -309,14 +309,24 @@ const onDateSelect = (newDate) => {
 <style lang="scss">
 .col-span-22 {
 	grid-column: span 2 / span 2;
+	@media (max-width: 700px) {
+		margin-top: 0 !important;
+	}
 }
 .col-span-33 {
 	grid-column: span 3 / span 3;
+	@media (max-width: 700px) {
+		margin-top: 0 !important;
+	}
 }
 .italic-24 {
 	font-style: italic;
 	font-size: 24px;
 	font-weight: 400;
+	@media (max-width: 700px) {
+		font-size: 14px;
+		margin-top: 8px;
+	}
 }
 .grid-4_d {
 	max-width: 1100px;
@@ -327,5 +337,15 @@ const onDateSelect = (newDate) => {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 	margin-bottom: 30px;
+	@media (max-width: 700px) {
+		display: flex;
+		flex-direction: column;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		column-gap: 0px;
+		row-gap: 10px;
+		div {
+			width: 100%;
+		}
+	}
 }
 </style>
