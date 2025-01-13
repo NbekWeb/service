@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+// import v-checkbox from "./v-checkbox.vue";
 import { ref } from "vue";
 const dialog = ref(false);
-
+const isChecked = ref(false);
 function open() {
 	dialog.value = true;
 }
@@ -13,11 +14,12 @@ defineExpose({
 <template>
 	<div>
 		<v-dialog class="modal" v-model="dialog" max-width="607" persistent>
-			<v-card class="p-54">
+			<v-card class="p-54 fd">
 				<v-checkbox
 					color="primary"
 					label="Просмотр фамилии, имени и отчества"
 				></v-checkbox>
+
 				<v-checkbox
 					color="primary"
 					label="Просмотр даты рождения"
@@ -42,7 +44,9 @@ defineExpose({
 					label="Просмотр адреса электронной почты"
 				></v-checkbox>
 				<div class="btn-center">
-					<v-btn @click="dialog = false" class="btnn1" color="primary">Подтвердить</v-btn>
+					<v-btn @click="dialog = false" class="btnn1" color="primary"
+						>Подтвердить</v-btn
+					>
 					<v-btn @click="dialog = false" class="btnn1">Назад</v-btn>
 				</div>
 			</v-card>
@@ -51,14 +55,36 @@ defineExpose({
 </template>
 <style lang="scss">
 .modal {
-	.v-checkbox .v-selection-control {
-		min-height: 42px !important;
-	}
-	.btn-center {
-      margin-top: 20px;
+	.custom-checkbox {
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		border: 2px solid blue;
 		display: flex;
 		justify-content: center;
-      column-gap: 20px;
+		align-items: center;
+		background-color: transparent;
+		cursor: pointer;
+		transition: background-color 0.2s, border-color 0.2s;
+	}
+
+	.custom-checkbox.checked {
+		background-color: blue; /* Checked holatida fon rangi */
+		border-color: blue; /* Checked holatida chegarasi rangi */
+	}
+	.fd {
+		display: flex;
+		flex-direction: column;
+		row-gap: 14px;
+	}
+	.v-checkbox .v-selection-control {
+		min-height: auto !important;
+	}
+	.btn-center {
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+		column-gap: 20px;
 	}
 	.v-input__details {
 		display: none !important;
@@ -73,15 +99,16 @@ defineExpose({
 	.v-label {
 		font-weight: 500;
 		font-family: Inter;
-		line-height: 16px;
-		height: 20px;
+		line-height: 20px;
+		@media (max-width: 700px) {
+			font-size: 14px;
+		}
 	}
 	.btnn1 {
-	
 		height: 52px !important;
 		margin-top: 6px;
 		font-size: 20px !important;
-      font-weight: 600;
+		font-weight: 600;
 	}
 	.item-m {
 		margin-top: 26px;
@@ -102,9 +129,15 @@ defineExpose({
 		font-weight: 500;
 		font-family: Inter;
 		color: #6b7280;
+		@media (max-width: 700px) {
+			font-size: 16px;
+		}
 	}
 	.p-54 {
 		padding: 54px;
+		@media (max-width: 700px) {
+			padding: 24px;
+		}
 	}
 }
 </style>

@@ -21,7 +21,6 @@ function handleModal() {
 			<v-card class="p-54">
 				<img class="img-center" src="@/assets/img/check.svg" alt="" />
 				<h3 class="img-center item-m">Подача заявления отменена</h3>
-			
 
 				<v-btn @click="handleModal" class="btnn">ОК</v-btn>
 			</v-card>
@@ -59,8 +58,14 @@ function handleModal() {
 	font-weight: 500;
 	font-family: Inter;
 	color: #6b7280;
+	@media (max-width: 700px) {
+		font-size: 16px;
+	}
 }
 .p-54 {
 	padding: 54px;
+	@media (max-width: 700px) {
+		padding: 24px;
+	}
 }
 </style>
