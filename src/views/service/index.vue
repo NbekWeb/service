@@ -1,7 +1,9 @@
-<script lang="ts" setup>
+<script setup>
+// import SvgIcon from '@jamescoyle/vue-icon';
+// import { mdiChevronDownCircle } from '@mdi/js';
 import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
-const router = useRouter()
+const router = useRouter();
 const selectedOption = ref(null); // Tanlangan qiymat
 const selectedOption2 = ref(null); // Tanlangan qiymat
 const selectedOption3 = ref(null); // Tanlangan qiymat
@@ -9,7 +11,16 @@ const selectedOption4 = ref(null); // Tanlangan qiymat
 const selectedDate = ref(null); // Tanlangan sana
 const selectedDate2 = ref(null); // Tanlangan sana
 const selectedDate3 = ref(null); // Tanlangan sana
-const options = ref(["По смерти", "Иное"]); // Variantlar
+const options = ref([
+	{
+		label: "Иное",
+		value: 1,
+	},
+	{
+		label: "По смерти",
+		value: 2,
+	},
+]);
 const options2 = ref([
 	"Договор SIN 114009 от 21.09.2023",
 	"Договор ATB №21/HC/000300008280",
@@ -20,6 +31,11 @@ const menu = ref(false); // Menu ochilish holati
 const menu2 = ref(false); // Menu ochilish holati
 const menu3 = ref(false); // Menu ochilish holati
 
+function itemProps(item) {
+	return {
+		title: item.label,
+	};
+}
 // Formatlangan sana
 const formattedDate = computed(() => {
 	if (!selectedDate.value) return "";
@@ -61,21 +77,34 @@ const onDateSelect3 = (newDate) => {
 
 <template>
 	<div class="container">
-      
 		<h1>Сервисы</h1>
 		<div class="service">
-			<h2>Подать заявление по страховому событию</h2>
+			<h2 class="mb8">Подать заявление по страховому событию</h2>
 			<v-select
 				class="sel"
 				v-model="selectedOption"
 				:items="options"
+				item-text="label"
+				item-value="value"
+				:item-props="itemProps"
 				placeholder="Укажите событие"
-			></v-select>
+			>
+				<template v-slot:append-inner>
+					<div @click="toggleMenu" class="custom-icon">
+						<img class="w-6 h-6" src="@/assets/img/down.svg" alt="" />
+					</div>
+				</template>
+			</v-select>
 			<v-select
 				class=""
 				v-model="selectedOption2"
 				:items="options2"
 				placeholder="Укажите номер договора"
+			>
+				<template v-slot:append-inner>
+					<div @click="toggleMenu" class="custom-icon">
+						<img class="w-6 h-6" src="@/assets/img/down.svg" alt="" />
+					</div> </template
 			></v-select>
 			<v-menu
 				v-model="menu"
@@ -93,6 +122,14 @@ const onDateSelect3 = (newDate) => {
 						label="Выберите дату"
 						readonly
 						placeholder="ДД.ММ.ГГГГ"
+						><template v-slot:append-inner>
+							<div @click="toggleMenu" class="custom-icon">
+								<img
+									class="w-6 h-6"
+									src="@/assets/img/calendar.svg"
+									alt=""
+								/>
+							</div> </template
 					></v-text-field>
 				</template>
 
@@ -105,13 +142,18 @@ const onDateSelect3 = (newDate) => {
 					@input="onDateSelect"
 				></v-date-picker>
 			</v-menu>
-			<h2>Подать заявление на выплату по риску «Дожитие»</h2>
+			<h2 class="mb8">Подать заявление на выплату по риску «Дожитие»</h2>
 
 			<v-select
 				class=""
 				v-model="selectedOption3"
 				:items="options2"
 				placeholder="Укажите номер договора"
+			>
+				<template v-slot:append-inner>
+					<div @click="toggleMenu" class="custom-icon">
+						<img class="w-6 h-6" src="@/assets/img/down.svg" alt="" />
+					</div> </template
 			></v-select>
 			<v-menu
 				v-model="menu2"
@@ -129,10 +171,17 @@ const onDateSelect3 = (newDate) => {
 						label="Выберите дату"
 						readonly
 						placeholder="ДД.ММ.ГГГГ"
+						><template v-slot:append-inner>
+							<div @click="toggleMenu" class="custom-icon">
+								<img
+									class="w-6 h-6"
+									src="@/assets/img/calendar.svg"
+									alt=""
+								/>
+							</div> </template
 					></v-text-field>
 				</template>
 
-				<!-- Date Picker -->
 				<v-date-picker
 					v-model="selectedDate2"
 					locale="ru"
@@ -141,13 +190,17 @@ const onDateSelect3 = (newDate) => {
 					@input="onDateSelect2"
 				></v-date-picker>
 			</v-menu>
-			<h2>Подать заявление о расторжении</h2>
+			<h2 class="mb8">Подать заявление о расторжении</h2>
 
 			<v-select
 				class=""
 				v-model="selectedOption4"
 				:items="options2"
 				placeholder="Укажите номер договора"
+				><template v-slot:append-inner>
+					<div @click="toggleMenu" class="custom-icon">
+						<img class="w-6 h-6" src="@/assets/img/down.svg" alt="" />
+					</div> </template
 			></v-select>
 			<v-menu
 				v-model="menu3"
@@ -165,6 +218,14 @@ const onDateSelect3 = (newDate) => {
 						label="Выберите дату"
 						readonly
 						placeholder="ДД.ММ.ГГГГ"
+						><template v-slot:append-inner>
+							<div @click="toggleMenu" class="custom-icon">
+								<img
+									class="w-6 h-6"
+									src="@/assets/img/calendar.svg"
+									alt=""
+								/>
+							</div> </template
 					></v-text-field>
 				</template>
 
@@ -177,11 +238,46 @@ const onDateSelect3 = (newDate) => {
 					@input="onDateSelect3"
 				></v-date-picker>
 			</v-menu>
-			<v-btn @click="router.push('/order')" v-if="formattedDate && selectedOption2 && selectedOption" block class="custom-button" color="primary">Далее</v-btn>
+			<v-btn
+				@click="
+					router.push({ path: '/order', query: { id: selectedOption } })
+				"
+				v-if="formattedDate && selectedOption2 && selectedOption"
+				block
+				class="custom-button"
+				color="primary"
+				>Далее</v-btn
+			>
 		</div>
 	</div>
 </template>
 <style lang="scss">
+.v-select {
+	.custom-icon {
+		transform: rotate(0deg);
+		transition: all 0.3s;
+		margin-right: 4px;
+	}
+}
+.v-select__menu-icon {
+	display: none;
+}
+.v-select--active-menu {
+	.custom-icon {
+		transform: rotate(-180deg);
+		transition: all 0.3s;
+	}
+}
+.custom-icon {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	width: 22px;
+	// height: 12px;
+}
+.custom-icon svg {
+	fill: #000; /* Rangni sozlash */
+}
 .service {
 	margin-top: 60px;
 	.sel {

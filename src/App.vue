@@ -10,7 +10,7 @@ const signRef = ref()
       <SingInModal ref="signRef" />
 		<div class="container">
 			<div class="fl">
-				<v-btn @click="signRef.open()">Выход</v-btn>
+				<v-btn class="h50" @click="signRef.open()">Выход</v-btn>
 			</div>
 		</div>
 		<RouterView />

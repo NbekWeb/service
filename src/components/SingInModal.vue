@@ -2,7 +2,7 @@
 import ProfilModal from "./ProfilModal.vue";
 import { ref } from "vue";
 const dialog = ref(false);
-const _profileRef = ref()
+const _profileRef = ref();
 function open() {
 	dialog.value = true;
 }
@@ -11,14 +11,14 @@ defineExpose({
 });
 
 function handleModal2() {
-   dialog.value = false;
-   _profileRef.value.open()
+	dialog.value = false;
+	_profileRef.value.open();
 }
 </script>
 
 <template>
 	<div>
-      <ProfilModal ref="_profileRef" />
+		<ProfilModal ref="_profileRef" />
 		<v-dialog v-model="dialog" max-width="815" persistent>
 			<v-card class="p-54">
 				<img class="img-center" src="@/assets/img/warning.svg" alt="" />
@@ -48,7 +48,7 @@ function handleModal2() {
 	font-family: Inter;
 	text-align: center;
 	color: #005fad;
-   cursor: pointer;
+	cursor: pointer;
 }
 .title {
 	text-align: center;
@@ -57,8 +57,14 @@ function handleModal2() {
 	font-weight: 500;
 	font-family: Inter;
 	color: #6b7280;
+	@media (max-width: 700px) {
+		font-size: 16px;
+	}
 }
 .p-54 {
 	padding: 54px;
+	@media (max-width: 700px) {
+		padding: 24px;
+	}
 }
 </style>
