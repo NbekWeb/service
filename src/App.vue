@@ -13,7 +13,6 @@ const signRef = ref()
 				<v-btn @click="signRef.open()">Выход</v-btn>
 			</div>
 		</div>
-
 		<RouterView />
 	</div>
 </template>
