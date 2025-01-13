@@ -1,7 +1,7 @@
-<script lang="ts" setup>
+<script setup>
 import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
-const router = useRouter()
+const router = useRouter();
 const selectedOption = ref(null); // Tanlangan qiymat
 const selectedOption2 = ref(null); // Tanlangan qiymat
 const selectedOption3 = ref(null); // Tanlangan qiymat
@@ -9,7 +9,16 @@ const selectedOption4 = ref(null); // Tanlangan qiymat
 const selectedDate = ref(null); // Tanlangan sana
 const selectedDate2 = ref(null); // Tanlangan sana
 const selectedDate3 = ref(null); // Tanlangan sana
-const options = ref(["По смерти", "Иное"]); // Variantlar
+const options = ref([
+	{
+		label: "Иное",
+		value: 1,
+	},
+	{
+		label: "По смерти",
+		value: 2,
+	},
+]);
 const options2 = ref([
 	"Договор SIN 114009 от 21.09.2023",
 	"Договор ATB №21/HC/000300008280",
@@ -20,6 +29,11 @@ const menu = ref(false); // Menu ochilish holati
 const menu2 = ref(false); // Menu ochilish holati
 const menu3 = ref(false); // Menu ochilish holati
 
+function itemProps(item) {
+	return {
+		title: item.label,
+	};
+}
 // Formatlangan sana
 const formattedDate = computed(() => {
 	if (!selectedDate.value) return "";
@@ -61,7 +75,6 @@ const onDateSelect3 = (newDate) => {
 
 <template>
 	<div class="container">
-      
 		<h1>Сервисы</h1>
 		<div class="service">
 			<h2>Подать заявление по страховому событию</h2>
@@ -69,6 +82,9 @@ const onDateSelect3 = (newDate) => {
 				class="sel"
 				v-model="selectedOption"
 				:items="options"
+				item-text="label"
+				item-value="value"
+				:item-props="itemProps"
 				placeholder="Укажите событие"
 			></v-select>
 			<v-select
@@ -132,7 +148,6 @@ const onDateSelect3 = (newDate) => {
 					></v-text-field>
 				</template>
 
-				<!-- Date Picker -->
 				<v-date-picker
 					v-model="selectedDate2"
 					locale="ru"
@@ -177,7 +192,16 @@ const onDateSelect3 = (newDate) => {
 					@input="onDateSelect3"
 				></v-date-picker>
 			</v-menu>
-			<v-btn @click="router.push('/order')" v-if="formattedDate && selectedOption2 && selectedOption" block class="custom-button" color="primary">Далее</v-btn>
+			<v-btn
+				@click="
+					router.push({ path: '/order', query: { id: selectedOption } })
+				"
+				v-if="formattedDate && selectedOption2 && selectedOption"
+				block
+				class="custom-button"
+				color="primary"
+				>Далее</v-btn
+			>
 		</div>
 	</div>
 </template>
