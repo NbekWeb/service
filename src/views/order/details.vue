@@ -293,7 +293,7 @@ const onDateSelect = (newDate) => {
 					<p class="p-500">ИНН</p>
 					<v-text-field class="input" variant="solo"></v-text-field>
 				</div>
-				<div class="col-span-22">
+				<div class="col-span-33">
 					<p class="p-500">Расчетный счет</p>
 					<v-text-field class="input" variant="solo"></v-text-field>
 				</div>
@@ -322,9 +322,11 @@ const onDateSelect = (newDate) => {
 .italic-24 {
 	font-style: italic;
 	font-size: 24px;
+	line-height: 30px;
+	font-family: "Source Sans Pro";
 	font-weight: 400;
 	@media (max-width: 700px) {
-		font-size: 14px;
+		font-size: 16px;
 		margin-top: 8px;
 	}
 }

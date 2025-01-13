@@ -460,7 +460,7 @@ const onDateSelect7 = (newDate) => {
 								<div>
 									<p style="margin-bottom: 6px"></p>
 									<v-text-field
-										v-model="item.hospital1"
+										v-model="item.hospital2"
 										placeholder="Госпитализировали по"
 										variant="solo"
 									></v-text-field>
